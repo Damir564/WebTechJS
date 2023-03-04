@@ -34,7 +34,7 @@ switch (task)
         let n = 0
         while (true)
         {
-            n = +prompt("Введите число"), 10
+            n = +prompt("Введите число")
             if (!isNaN(n))
                 break
             console.log('Это не число')
@@ -55,7 +55,7 @@ switch (task)
         let n = 0
         while (true)
         {
-            n = +prompt("Введите высоту ёлки"), 10
+            n = +prompt("Введите высоту ёлки")
             if (!isNaN(n))
                 break
             console.log('Это не число')
@@ -88,5 +88,67 @@ switch (task)
         }
         console.log("угадано")
         break
+    }
+    case 6:
+        {
+        let n = 0
+        while (true)
+        {
+            n = +prompt("Введите число n")
+            if (!isNaN(n))
+                break
+            console.log('Это не число')
         }
+        let x = 0
+        while (true)
+        {
+            x = +prompt("Введите число x")
+            if (!isNaN(n))
+                break
+            console.log('Это не число')
+        }
+        let y = 0
+        while (true)
+        {
+            y = +prompt("Введите число y")
+            if (!isNaN(n))
+                break
+            console.log('Это не число')
+        }
+        let ans = `n = ${n}, x = ${x}, y = ${y} => `
+        if (n % x + n % y != 0)
+            ans += `false`
+        else
+            ans += 'true'
+        console.log(ans)
+        break
+    }
+    case 7:
+        {
+        let n = 0
+        while (true)
+        {
+            n = +prompt("Введите месяц")
+            if (n > 12)
+            {
+                console.log('Большой месяц')
+                continue
+            }
+            if (!isNaN(n))
+                break
+            console.log('Это не число')
+        }
+        let ans = `месяц ${n} => `
+        if (n < 4)
+            ans += `1 `
+        else if (n < 7)
+            ans += `2 `
+        else if (n < 10)
+            ans += `3 `
+        else
+            ans += `4 `
+        ans += `квартал`
+        console.log(ans)
+        break
+    }
 }
