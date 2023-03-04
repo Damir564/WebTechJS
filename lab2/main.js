@@ -12,7 +12,7 @@ function convertSpeed(speed, direction)
 function absValue(x)
 {
     if (x < 0)
-        return x * -1
+        return -x
     return x
 }
 
@@ -22,8 +22,16 @@ function Student(group, last_name, first_name)
     this.group = group
     this.last_name = last_name
     this.first_name = first_name
-    console.log(`Список свойств: ${this.group}, ${this.last_name}, ${this.first_name}\n\
-Студент ${this.first_name} ${this.last_name} учится в ${this.group} группе`)
+    let ans = `Список свойств: `
+    let properties = []
+    for (let key in this)
+    {
+        properties.push(key)
+    }
+    ans += properties.join(', ')
+    ans += `\n`
+    ans += `Студент ${this.first_name} ${this.last_name} учится в ${this.group} группе`
+    console.log(ans)
 }
 
 
