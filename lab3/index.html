@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    <title>Lab 3</title>
+</head>
+
+<body>
+    <header>
+        <h1>Form</h1>
+        <p>
+            <button id="registration">Регистрация</button>
+        </p>
+    </header>
+    <main>
+        <div id="modal" class="modal" >
+            <div class="align-right"><button id="close" class="close-form">X</button></div>
+            <form action="#" name="contact" id="form-contact" method="post" novalidate>
+                <p>
+                    <label for="password">
+                        <p>Пароль</p>
+                        <input required type="password" name="password" id="password" placeholder="password"
+                        minlength="6"/>
+                    </label>
+                    <button id="showpassword" type="button">Показать пароль</button>
+                </p>
+                <div class="errorBlock"><p id="password-error"></p></div>
+                <p>
+                    <label for="mail">
+                        <p>Почта</p>
+                        <input required type="email" name="email" id="email" placeholder="E-Mail" aria-errormessage="email_error"/>
+                    </label>
+                </p>
+                <div class="errorBlock"><p id="email-error"></p></div>
+                <p>
+                    <button id="send" type="submit">Отправить</button>
+                </p>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>
