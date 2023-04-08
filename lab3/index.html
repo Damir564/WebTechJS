@@ -18,29 +18,30 @@
         </p>
     </header>
     <main>
-        <div id="modal" class="modal" >
-            <div class="align-right"><button id="close" class="close-form">X</button></div>
-            <form action="#" name="contact" id="form-contact" method="post" novalidate>
-                <p>
-                    <label for="password">
-                        <p>Пароль</p>
-                        <input required type="password" name="password" id="password" placeholder="password"
-                        minlength="6"/>
-                    </label>
-                    <button id="showpassword" type="button">Показать пароль</button>
-                </p>
-                <div class="errorBlock"><p id="password-error"></p></div>
-                <p>
-                    <label for="mail">
-                        <p>Почта</p>
-                        <input required type="email" name="email" id="email" placeholder="E-Mail" aria-errormessage="email_error"/>
-                    </label>
-                </p>
-                <div class="errorBlock"><p id="email-error"></p></div>
-                <p>
-                    <button id="send" type="submit">Отправить</button>
-                </p>
-            </form>
+        <div id="modal-wrapper" class="modal-wrapper">
+            <div id="modal" class="modal">
+                <div class="align-right"><button id="close" class="close-form">X</button></div>
+                <form action="#" name="contact" id="form-contact" method="post" novalidate>
+                    <p>
+                        <label for="password">
+                            <p>Пароль</p>
+                            <input required type="password" name="password" id="password" placeholder="password"
+                            minlength="6"/>
+                        </label>
+                        <button id="showpassword" type="button">Показать пароль</button>
+                    </p>
+                    <div class="errorBlock"><p id="password-error"></p></div>
+                    <p>
+                        <label for="mail">
+                            <p>Почта</p>
+                            <input required type="email" name="email" id="email" placeholder="E-Mail" aria-errormessage="email_error"/>
+                        </label>
+                    </p>
+                    <div class="errorBlock"><p id="email-error"></p></div>
+                    <p>
+                        <button id="send" type="submit">Отправить</button>
+                    </p>
+                </form>
         </div>
     </main>
 </body>

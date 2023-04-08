@@ -1,4 +1,4 @@
-var modalForm = document.getElementById('modal')
+var modalForm = document.getElementById('modal-wrapper')
 var registration = document.getElementById('registration')
 var close = document.getElementById('close')
 var showpassword = document.getElementById('showpassword')
@@ -35,7 +35,7 @@ function validationCheck(event)
     email.setCustomValidity("")
 }
 
-registration.onclick = () => {modal.style.display = 'block', registration.style.display = "none"}
+registration.onclick = () => {modal.style.display = 'fixed', registration.style.display = "none", modal.style.visibility = "1"} // visibility
 close.onclick = () => {registration.style.display = 'block', modal.style.display = "none"}
 modalForm.addEventListener('blur', (event) => validationCheck(event), true)
 // password.addEventListener('blur', (password) => validationCheck(password))
@@ -45,13 +45,13 @@ showpassword.onpointerup = () => password.type = 'password'
 
 const formElement = document.getElementById('form-contact'); // извлекаем элемент формы
 formElement.addEventListener('submit', (e) => {
-  if (isFormValid){
     e.preventDefault();
-    const formData = new FormData(formElement); // создаём объект FormData, передаём в него элемент формы
-    // теперь можно извлечь данные
-    const mail = formData.get('email'); 
-    const pass = formData.get('password');
-    console.log(mail, pass)
-    /* modal.style.display="none"; */
-  }
+    if (isFormValid){
+        const formData = new FormData(formElement); // создаём объект FormData, передаём в него элемент формы
+        // теперь можно извлечь данные
+        const mail = formData.get('email'); 
+        const pass = formData.get('password');
+        console.log(mail, pass)
+        /* modal.style.display="none"; */
+    }
 });
