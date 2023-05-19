@@ -62,6 +62,7 @@ function postHandler(req, res) {
             commentsPostHandler(req, res);
             break;
         default:
+            errorHandler(res);
             break;
     }
 }
