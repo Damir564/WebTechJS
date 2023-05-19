@@ -2,7 +2,7 @@ const http = require("http");
 
 const hostname = "127.0.0.1";
 const port = 3000;
-let dataJson = [];
+let commentsObj = [];
 let comments = [];
 let user = { amount_of_requests: 0 };
 
@@ -78,7 +78,7 @@ function commentsPostHandler(req, res) {
             if (!body)
                 body = "{}";
             let temp = JSON.parse(body);
-            dataJson.push(temp)
+            commentsObj.push(temp)
             comments.push(temp.comment);
             res.end("{comment: " + comments.toString() + "}");
             console.log(comments);
