@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const jsonParser = express.json();
 
-let commentsObj = [];
+let bodies = [];
 let comments = [];
 let user = { amount_of_requests: 0 };
 let adminPassword = "123123";
@@ -41,8 +41,12 @@ function statsGetHandler(req, res) {
 function commentsGetHandler(req, res)
 {
     user.amount_of_requests++;
+    if (bodies.length == 0)
+    {
+        res.send("No comments left");
+    }
     let temp = `<p>Comments</p><ol>`;
-    commentsObj.forEach(element => {
+    bodies.forEach(element => {
         temp += `<li>${element.user}: ${element.comment}</li>`
     });
     temp += `</ol>`;
@@ -51,21 +55,20 @@ function commentsGetHandler(req, res)
 
 function commentsPostHandler(req, res) {
     user.amount_of_requests++;
-    let body = [];
-    req
-        .on("data", (chunk) => {
-            body.push(chunk);
-        })
-        .on("end", () => {
-            body = Buffer.concat(body).toString();
-            if (!body)
-                body = "{}";
-            let temp = JSON.parse(body);
-            commentsObj.push(temp)
-            comments.push(temp.comment);
-            res.end("{comments: " + comments.toString() + "}");
-            console.log(comments);
-        });
+    let bodyTemp = req.body;
+    if (!("comment" in bodyTemp) || !("user" in bodyTemp))
+    {
+        res.send(`comment or user not found in request body`);
+        return;
+    }
+    if (bodyTemp.comment == "" || bodyTemp.user == "")
+    {
+        res.send("comment or user is empty in request body");
+        return;
+    }
+    bodies.push(bodyTemp);
+    comments.push(bodyTemp.comment);
+    res.send(comments);
 }
 
 module.exports = router;
