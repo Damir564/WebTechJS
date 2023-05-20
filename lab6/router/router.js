@@ -59,10 +59,11 @@ function statsGetHandler(req, res) {
 function commentsGetHandler(req, res)
 {
     user.amount_of_requests++;
-    let temp = "<ul>Comments</ul>";
+    let temp = `<p>Comments</p><ol>`;
     commentsObj.forEach(element => {
         temp += `<li>${element.user}: ${element.comment}</li>`
     });
+    temp += `</ol>`;
     res.end(temp);
 }
 

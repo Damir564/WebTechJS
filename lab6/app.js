@@ -15,6 +15,10 @@ app.listen(PORT, HOST, () =>{
     console.log(`Server running at http://${HOST}:${PORT}/`);
 })
 
+app.use((req, res) => {
+    res.status(404).send('Page not found!');
+});
+
 // app.use((req, res) => {
 //     res.setHeader("Content-Type", "text/plain");
 //     switch (req.method) {
