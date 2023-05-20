@@ -58,12 +58,12 @@ function commentsPostHandler(req, res) {
     let bodyTemp = req.body;
     if (!("comment" in bodyTemp) || !("user" in bodyTemp))
     {
-        res.send(`comment or user not found in request body`);
+        res.status('404').send(`comment or user not found in request body`);
         return;
     }
     if (bodyTemp.comment == "" || bodyTemp.user == "")
     {
-        res.send("comment or user is empty in request body");
+        res.status('404').send("comment or user is empty in request body");
         return;
     }
     bodies.push(bodyTemp);
