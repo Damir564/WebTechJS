@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="awsm.min.css">
+    <title>Server</title>
+</head>
+
+<body>
+    <h1>Запросы на сервере</h1>
+    <ul>
+        <li>
+            "GET /" - начальная страница
+        </li>
+        <li>
+            "POST /teams" - далее JSON файл с 2мя параметрами. Добавить команду в БД
+        </li>
+        <li>
+            "GET /teams/:ID" - Вывести на экран информацию о команде по ID
+        </li>
+        <li>"GET /hello" - страница с приветствием</li>
+        <li>
+            "GET /stats" - страница с user-agent и количеством запросов
+        </li>
+        <li>
+            "POST /comments" - Оставить комментарий
+        </li>
+    </ul>
+</body>
+
+</html>
